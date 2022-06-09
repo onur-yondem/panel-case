@@ -1,0 +1,8 @@
+email = "onur.yondem@useinsider.com"
+password = "Rolf1234."
+rule = ""
+page_type = ""
+qa_note = "test automation"
+var_id = ""
+variant_name = ""
+campaign_name = "testqa9"
