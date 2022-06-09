@@ -1,5 +1,5 @@
 email = "onur.yondem@useinsider.com"
-password = "Rolf1234."
+password = ""
 rule = ""
 page_type = ""
 qa_note = "test automation"
