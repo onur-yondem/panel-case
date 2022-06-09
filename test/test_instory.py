@@ -1,5 +1,6 @@
 import time
 import unittest
+
 from selenium import webdriver
 from page.panel_login_page import PanelLoginPage
 from page.panel_main_page import PanelMainPage
@@ -34,13 +35,23 @@ class AmazonHappyPath(unittest.TestCase):
 
         self.login_page.login()
         self.main_page.create_base_campaign()
-        self.campaign_page.create_campaign()
+        self.campaign_page.segment_settings()
+        self.campaign_page.rule_settings()
+        self.campaign_page.desing_settings()
+        self.campaign_page.goal_settings()
+        self.campaign_page.language_settings()
+        self.campaign_page.activation_time_settings()
+        self.campaign_page.display_settings()
+        self.campaign_page.advanced_settings()
+        self.campaign_page.activation_status_settings()
+        check_status = self.main_page.check_status()
+        self.assertTrue(check_status, "There is a problem.Status is not Test")
         check_details = self.main_page.check_details()
-        self.assertTrue(check_details, "There is a problem.Details is wrong")
+        self.assertTrue(check_details, "There is a problem.Details are wrong")
         self.main_page.generate_check()
         self.main_page.navigate_to_test_link()
         check_campaign_visible = self.main_page.check_campaign_visible(data.var_id)
-        self.assertTrue(check_campaign_visible, "There is a problem. Campaign not visible")
+        self.assertTrue(check_campaign_visible, "There is a problem. Campaign is not visible")
 
     def tearDown(self):
         self.driver.quit()
