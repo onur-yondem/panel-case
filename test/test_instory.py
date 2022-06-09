@@ -33,11 +33,11 @@ class AmazonHappyPath(unittest.TestCase):
         """
 
         self.login_page.login()
-        #self.main_page.create_base_campaign()
-        #self.campaign_page.create_campaign()
-        #check_details = self.main_page.check_details()
-        #self.assertTrue(check_details, "There is a problem.Details is wrong")
-        #self.main_page.generate_check()
+        self.main_page.create_base_campaign()
+        self.campaign_page.create_campaign()
+        check_details = self.main_page.check_details()
+        self.assertTrue(check_details, "There is a problem.Details is wrong")
+        self.main_page.generate_check()
         self.main_page.navigate_to_test_link()
         check_campaign_visible = self.main_page.check_campaign_visible(data.var_id)
         self.assertTrue(check_campaign_visible, "There is a problem. Campaign not visible")
